@@ -141,7 +141,7 @@ header{
 
 .top_header{
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: space-between;
 }
 
@@ -149,13 +149,9 @@ header{
 .top_header_logo{
     padding-top: 35px;
 }
-.logo{
-    padding-left: 75px;
-}
 
 .top_header_menu{
     padding-top: 37px;
-
 }
 
 ul.top_header_menu-item li{
@@ -193,6 +189,7 @@ ul.top_header_menu-item li a{
     font-weight: 700;
 }
 .top_header_cart .jqcart-total-cnt{
+    font-weight: 600;
     margin-left: 15px;
 }
 a.sign-in{
@@ -220,12 +217,16 @@ a.sign-in:hover{
 
 .bottom_header{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-between;
     margin-top: 52px;
     padding-bottom: 20px;
 }
 
+.bottom_header_menu-links{
+    overflow: scroll;
+    white-space: nowrap;
+}
 ul.bottom_header_menu-links li{
     display: inline-block;
     font-size: 11px;
@@ -464,7 +465,7 @@ ul.bottom_header_menu-links li a:hover{
 }
 
 .sort_block .shipto option{
-    color:#343e5c;
+    color:#043bdf;
 }
 
 .freeshipping input[type=checkbox] {
@@ -655,15 +656,17 @@ aside {
 .button_buy-now {
     display: block;
     width: 100px;
+    height: 35px;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     text-transform: uppercase;
-    text-decoration: none;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 7px;
     padding-bottom: 5px;
-    border-radius: 10px;
+    border: 2px solid #2754eb;
+    border-radius: 50px;
     color: #3a405b;
+    background-color: #fff;
     font-weight: 700;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
@@ -671,6 +674,8 @@ aside {
 .button_buy-now:hover{
     background-color: #2754eb;
     color: #fff;
+    border: 2px solid #2754eb;
+    border-radius: 50px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -697,8 +702,6 @@ aside {
     font-size: 14px;
     font-weight: 700;
     padding: 15px 20px;
-    height: 50px;
-    width: 50px;
     text-decoration: none;
     border: 1px solid #00deea;
     border-radius: 100%;
@@ -1347,3 +1350,6 @@ ul.footer_menu-item li a:hover
         display:block;
         margin-left:auto
     }
+
+
+

@@ -1,0 +1,87 @@
+/*Будет верно для маниторов у которых ширина 0-1920*/
+@media screen and (max-width: 1920px) {
+
+}
+
+/* 1369 - 1600 px */
+@media screen and (max-width: 1600px) {
+
+}
+
+/* 961 - 1368 px */
+@media screen and (max-width: 1368px) {
+	
+}
+
+/* 769 - 960 px */
+@media screen and (max-width: 960px) {
+	
+}
+
+/* 481 - 768 px */
+@media screen and (max-width: 768px) {
+    .top_header {
+    	flex-direction: column;
+    	align-items: center;
+    }
+
+    .top_header_menu-item {
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    }
+
+    .top_header_cart {
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    }
+
+    a.sign-in {
+    	margin-left: 0;
+    	margin-top: 20px;
+    }
+
+    .bottom_header_menu {
+    	margin-bottom: 20px;
+    }
+
+    ul.top_header_menu-item li {
+    	display: block;
+    }
+
+    .product-row-1 {
+    	grid-template-columns: 1fr;
+    }
+
+    .product-row-2 {
+    	grid-template-columns: 1fr;
+    }
+
+    .product-row-3 {
+    	grid-template-columns: 1fr;
+    }
+
+    .product-row-4 {
+    	grid-template-columns: 1fr;
+    }
+
+    .sort_block {
+    	flex-direction: column;
+    	align-items: center;
+	}
+	.sort_block div{
+		margin-bottom: 15px;
+	}
+	.pagination li{
+		padding-bottom: 30px;
+	}
+	.pagination a{
+		padding: 10px 15px;
+	}
+}
+
+/* 320 - 480 px */
+@media screen and (max-width: 480px) {
+	
+}

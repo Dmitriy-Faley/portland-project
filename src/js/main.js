@@ -11,6 +11,7 @@ jQuery(function ($) {
         draggable: true
     })
 
+
     var $carousel = $('.selers-products');
     $(document).on('keydown', function (e) {
         if (e.keyCode == 37) { //37 код кнопки
@@ -253,6 +254,8 @@ function actionPage() {
 
 }
 // end фильтр акции
+
+
 
 
 toggleCheckbox();

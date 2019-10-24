@@ -107,6 +107,22 @@ function toggleCart() {
     });
 }
 
+function activeFilter() {
+    let btnActiveFilter = document.querySelector(".btn-filter-active");
+    let asideFilter = document.querySelector("aside");
+    btnActiveFilter.addEventListener('click', () => {
+        asideFilter.style.display = 'block';
+        btnActiveFilter.textContent = 'Скрыть';
+
+        let btnHideFilter = document.querySelector(".btn-hide");
+        btnHideFilter.addEventListener('click', () => {
+            asideFilter.style.display = 'none';
+            btnHideFilter.textContent = 'фильтры';
+            activeFilter();
+        });
+    });
+    
+}
 
 
 //добавление и удаление товара в корзину
@@ -258,10 +274,12 @@ function actionPage() {
 
 
 
+
 toggleCheckbox();
 toggleCart();
 addCart();
 actionPage();
+activeFilter();
 
 
 

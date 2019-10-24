@@ -223,10 +223,7 @@ a.sign-in:hover{
     padding-bottom: 20px;
 }
 
-.bottom_header_menu-links{
-    overflow: scroll;
-    white-space: nowrap;
-}
+
 ul.bottom_header_menu-links li{
     display: inline-block;
     font-size: 11px;
@@ -1056,6 +1053,10 @@ aside {
     border-color: #fff;
 }
 
+.btn-filter-active{
+    display: none;
+    color: #222;
+}
 
 /*Sellers*/
 .best-sellers{
@@ -1097,6 +1098,7 @@ aside {
 }
 
 .best-sellers .seller_text p{
+    text-align: center;
     font-size: 16px;
     padding-top: 23px;
     padding-bottom: 11px;
@@ -1146,6 +1148,7 @@ aside {
 
 .testimonials_customers{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-top: 55px;
 }

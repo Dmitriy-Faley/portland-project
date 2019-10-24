@@ -10,11 +10,19 @@
 
 /* 961 - 1368 px */
 @media screen and (max-width: 1368px) {
-	
+	.testimonials_customers{
+		justify-content: space-around;
+	}
+	.testimonials_customers .testimonial_customer {
+		margin-right: 0px;
+	}
 }
 
 /* 769 - 960 px */
 @media screen and (max-width: 960px) {
+	.testimonials_customers .testimonial_customer p.customer_text{
+		width: 190px;
+	}
 	
 }
 
@@ -94,11 +102,12 @@
 	}
 	.testimonials_customers .testimonial_customer{
 		margin-bottom: 30px;
-		margin-right: 0;
 	}
-	footer{
-		height: auto;
+	.testimonials .testimonials_header h4{
+		font-size: 24px;
 	}
+
+
 	.footer_data{
 		flex-direction: column;
 		align-items: center;
@@ -111,30 +120,37 @@
 		flex-flow: column;
 		align-items: center;
 		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 	.footer_text p {
 		text-align: center;
 		padding-bottom: 10px;
 		width: auto;
 	}
+
 	aside{
 		display: none;
 	}
 	.btn-filter-active {
 		display: block;
+		position: sticky;
+		bottom: 0;
 	}
 }
 
 /* 320 - 480 px */
 @media screen and (max-width: 480px) {
 	.bottom_header_menu-links {
-		overflow: scroll;
-		white-space: nowrap;
+		/* overflow: scroll;
+		white-space: nowrap; */
+		text-align: center;
+
 	}
 	ul.footer_menu-item li{
 		display: block;
 		text-align: center;
 	}
-	
-	
+	footer div:nth-child(2) img {
+		display: none;
+	}
 }

@@ -510,9 +510,9 @@ aside {
 
 
 
-@media (min-width: 640px) {
+@media (min-width: 770px) {
     .grid {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas:
             "aside main"
             "aside main"
@@ -1055,7 +1055,12 @@ aside {
 
 .btn-filter-active{
     display: none;
-    color: #222;
+    background-color: #2754eb !important;
+    border: 1px solid #2754eb;
+    border-radius:10px;
+    color: #fff;
+    height: 38px;
+    font-weight: 700;
 }
 
 /*Sellers*/
@@ -1197,8 +1202,8 @@ aside {
 
 /*Footer*/
 footer{
-    height: 300px;
     background-color: #222328;
+    
 }
 .footer_data{
     display: flex;
@@ -1245,6 +1250,7 @@ ul.footer_menu-item li a:hover
     color: #fff;
     opacity: 0.4;
     padding-top: 55px;
+    padding-bottom: 50px;
 }
 
 .footer_text p{
@@ -1263,6 +1269,10 @@ ul.footer_menu-item li a:hover
     padding-left: 15px;
 }
 
+footer div:nth-child(2) img {
+    width: 100%;
+}
+
 /*Cart*/
 
 .cart {
@@ -1273,7 +1283,7 @@ ul.footer_menu-item li a:hover
     width: 100%;
     height: 100%;
     background-color: #00000050;
-    z-index: 130
+    z-index: 130;
 }
 
 .cart-body {
@@ -1313,19 +1323,19 @@ ul.footer_menu-item li a:hover
     color: #4d5f71
 }
 
-.cart-wrapper .card {
+.cart-wrapper .product {
     width: 33%
 }
 
 @media (max-width: 992px) {
-    .cart-wrapper .card {
+    .cart-wrapper .product {
         width: 50%
     }
 
 }
 
 @media (max-width: 768px) {
-    .cart-wrapper .card {
+    .cart-wrapper .product {
         width: 70%
     }
 
@@ -1355,4 +1365,12 @@ ul.footer_menu-item li a:hover
     }
 
 
+/*Pagination*/
 
+.content-page {
+    display: none;
+}
+
+.content-page-active {
+    display: block;
+}

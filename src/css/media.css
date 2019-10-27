@@ -23,7 +23,9 @@
 	.testimonials_customers .testimonial_customer p.customer_text{
 		width: 190px;
 	}
-	
+	aside {
+		display: block;
+	}
 }
 
 /* 481 - 768 px */

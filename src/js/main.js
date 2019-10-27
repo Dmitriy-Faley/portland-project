@@ -82,7 +82,7 @@ function toggleCheckbox() {
         e.addEventListener('change', function () {
             if (this.checked) {
                 this.nextElementSibling.classList.add('checked');
-                console.log('gal');
+                //console.log('gal');
                 
             } else {
                 this.nextElementSibling.classList.remove('checked');
@@ -179,56 +179,78 @@ function actionPage() {
     let products = document.querySelectorAll('main .product');
     let freeshippingCheckbox = document.getElementById('freeshipping-checkbox');
     let appleCheckbox = document.getElementById('apple');
+    let jblCheckbox = document.getElementById('jbl');
     let min = document.getElementById('min');
     let max = document.getElementById('max');
     let goods = document.querySelector('main');
     let search = document.querySelector('.search-wrapper_input');
     let searchBtn = document.querySelector('.search-btn');
 
-/*
+
     function allcheckCheckbox() {
         products.forEach((card) => {
-            if (freeshippingCheckbox.checked || appleCheckbox.checked) {
-                console.log(true);
-                if (!card.getAttribute('data-free') || !card.getAttribute('data-apple')) {
+            if (freeshippingCheckbox.checked) {
+                //console.log(true);
+                if (!card.getAttribute('data-free')) {
                     card.style.display = 'none';
+                    }
+                }
+                else if (appleCheckbox.checked) {
+                    if (!card.getAttribute('data-apple')) {
+                        card.style.display  = 'none';
+                    }
                 }
                 else {
-                    card.style.display = 'block';
-                }
+                    card.style.display = '';
             }
         });
     };
 
     freeshippingCheckbox.addEventListener('change', allcheckCheckbox);
     appleCheckbox.addEventListener('change', allcheckCheckbox);
-    */
+    
 
-    freeshippingCheckbox.addEventListener('click', () => {
-        products.forEach((card) => {
-            if (freeshippingCheckbox.checked) {
-                //console.log(true);
-                if (!card.getAttribute('data-free')) {
-                    card.style.display = 'none';
-                }
-            } else {
-                card.style.display = '';
-            }
-        });
-    });
+    // // freeshippingCheckbox.addEventListener('click', () => {
+    // //     products.forEach((card) => {
+    // //         if (freeshippingCheckbox.checked) {
+    // //             //console.log(true);
+    // //             if (!card.getAttribute('data-free')) {
+    // //                 card.style.display = 'none';
+    // //             }
+    // //         } 
+    // //         else {
+    // //             card.style.display = '';
+    // //         }
+    // //     });
+    // // });
 
-    appleCheckbox.addEventListener('click', () => {
-        products.forEach((card) => {
-            if (appleCheckbox.checked) {
-                console.log(true);
-                if (!card.getAttribute('data-apple')) {
-                    card.style.display = 'none';
-                }
-            } else {
-                card.style.display = '';
-            }
-        });
-    });
+    // appleCheckbox.addEventListener('click', () => {
+    //     products.forEach((card) => {
+    //         if (appleCheckbox.checked) {
+    //             //console.log(true);
+    //             if (!card.getAttribute('data-apple')) {
+    //                 card.style.display = 'none';
+    //             }
+    //         } 
+    //         else {
+    //             card.style.display = '';
+    //         }
+    //     });
+    // });
+
+    // jblCheckbox.addEventListener('click', () => {
+    //     products.forEach((card) => {
+    //         if (jblCheckbox.checked) {
+    //             //console.log(true);
+    //             if (!card.getAttribute('data-jbl')) {
+    //                 card.style.display = 'none';
+    //             }
+    //         } 
+    //         else {
+    //             card.style.display = '';
+    //         }
+    //     });
+    // });
 
     
     function filterPrice() {
@@ -272,55 +294,6 @@ function actionPage() {
 // end фильтр акции
 
 
-
-/**
- * Buzina Pagination http://github.com/mikebrsv/buzina-pagination
- * Author: Mikhail Borisov http://github.com/mikebrsv
- * License: https://github.com/mikebrsv/buzina-pagination/blob/master/LICENSE
- */
-
-(function($){$.fn.buzinaPagination=function(options){var settings=$.extend({prevnext:!0,prevText:"Назад",nextText:"Вперед",itemsOnPage:1},options);var buzinaContent=$(this);var pagesTotal=buzinaContent.children().length;var buzinaContentId=buzinaContent.attr("id");var pageClass=buzinaContentId+"--page-";var pagerId=buzinaContentId+"--pager";for(i=0;i<pagesTotal;i++){$("#"+buzinaContentId+"> div").slice(i,i+settings.itemsOnPage).wrapAll("<div></div>");buzinaContent.children(":eq("+i+")").addClass(pageClass+(i+1)+" content-page")}
-pagesTotal=buzinaContent.children().length;buzinaContent.children(":first").addClass("content-page-active");var pagerDom=createPagerDom(pagesTotal,pagerId,settings);buzinaContent.after(pagerDom);$("#"+pagerId+" a").click(function(e){e.preventDefault();var pageClicked=this.text;if(pageClicked==settings.prevText){var currentActive=$(".content-page-active").attr("class");var currentActiveNumber=currentActive.substring(currentActive.indexOf("--page")+7,currentActive.indexOf(" "));if(currentActiveNumber>1){$(".content-page").removeClass("content-page-active");$("."+pageClass+(parseInt(currentActiveNumber)-1)).addClass("content-page-active")}}else if(pageClicked==settings.nextText){var currentActive=$(".content-page-active").attr("class");var currentActiveNumber=currentActive.substring(currentActive.indexOf("--page")+7,currentActive.indexOf(" "));if(currentActiveNumber<pagesTotal){$(".content-page").removeClass("content-page-active");$("."+pageClass+(parseInt(currentActiveNumber)+1)).addClass("content-page-active")}}else{$(".content-page").removeClass("content-page-active");$("."+pageClass+pageClicked).addClass("content-page-active")}})}})(jQuery);function createPagerDom(pagesTotal,pagerId,settings){var pagerConc="";for(i=0;i<pagesTotal;i++){pagerConc+=`
-      <li class="page-item">
-        <a class="page-link" href="#">${i + 1}</a>
-      </li>`}
-if(settings.prevnext){var prevDom=`
-    <li class="page-item">
-      <a class="page-link" href="#">${settings.prevText}</a>
-    </li>`;var nextDom=`
-    <li class="page-item">
-      <a class="page-link" href="#">${settings.nextText}</a>
-    </li>
-    `;pagerConc=prevDom+pagerConc+nextDom}
-return `
-    <nav id="${pagerId}">
-      <ul class="pagination">        
-        ${pagerConc}        
-      </ul>
-    </nav>`
-  }
-
-
-  (function($){$.fn.buzinaPagination=function(options){var settings=$.extend({prevnext:!0,prevText:"Назад",nextText:"Вперед",itemsOnPage:1},options);var buzinaContent=$(this);var pagesTotal=buzinaContent.children().length;var buzinaContentId=buzinaContent.attr("id");var pageClass=buzinaContentId+"--page-";var pagerId=buzinaContentId+"--pager";for(i=0;i<pagesTotal;i++){$("#"+buzinaContentId+"> div").slice(i,i+settings.itemsOnPage).wrapAll("<div></div>");buzinaContent.children(":eq("+i+")").addClass(pageClass+(i+1)+" content-page")}
-pagesTotal=buzinaContent.children().length;buzinaContent.children(":first").addClass("content-page-active");var pagerDom=createPagerDom(pagesTotal,pagerId,settings);buzinaContent.after(pagerDom);$("#"+pagerId+" a").click(function(e){e.preventDefault();var pageClicked=this.text;if(pageClicked==settings.prevText){var currentActive=$(".content-page-active").attr("class");var currentActiveNumber=currentActive.substring(currentActive.indexOf("--page")+7,currentActive.indexOf(" "));if(currentActiveNumber>1){$(".content-page").removeClass("content-page-active");$("."+pageClass+(parseInt(currentActiveNumber)-1)).addClass("content-page-active")}}else if(pageClicked==settings.nextText){var currentActive=$(".content-page-active").attr("class");var currentActiveNumber=currentActive.substring(currentActive.indexOf("--page")+7,currentActive.indexOf(" "));if(currentActiveNumber<pagesTotal){$(".content-page").removeClass("content-page-active");$("."+pageClass+(parseInt(currentActiveNumber)+1)).addClass("content-page-active")}}else{$(".content-page").removeClass("content-page-active");$("."+pageClass+pageClicked).addClass("content-page-active")}})}})(jQuery);function createPagerDom(pagesTotal,pagerId,settings){var pagerConc="";for(i=0;i<pagesTotal;i++){pagerConc+=`
-      <li class="page-item">
-        <a class="page-link" href="#">${i + 1}</a>
-      </li>`}
-if(settings.prevnext){var prevDom=`
-    <li class="page-item">
-      <a class="page-link" href="#">${settings.prevText}</a>
-    </li>`;var nextDom=`
-    <li class="page-item">
-      <a class="page-link" href="#">${settings.nextText}</a>
-    </li>
-    `;pagerConc=prevDom+pagerConc+nextDom}
-return `
-    <nav id="${pagerId}">
-      <ul class="pagination">        
-        ${pagerConc}        
-      </ul>
-    </nav>`
-  }
 
 
 

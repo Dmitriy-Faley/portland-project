@@ -293,6 +293,47 @@ function actionPage() {
 }
 // end фильтр акции
 
+//Форма входа
+function toggleLoginform() {
+    let btnLogin = document.getElementById('login-form');
+    let modalLogin = document.querySelector(".login-form");
+    btnLogin.addEventListener('click', () => {
+        modalLogin.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+    let closeBtn = document.querySelector(".login-close");
+    closeBtn.addEventListener("click", () => {
+        modalLogin.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+}
+//end
+
+
+//Анимация 3D карточки
+window.onload = function () { //document.querySelectorAll('.card'); возвращает null, потому что он выполняется до полной загрузки DOM.
+    var cards = document.querySelectorAll('.card-img');
+
+
+    for (let i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        card.addEventListener('mousemove', startRotate)
+        card.addEventListener('mouseout', stopRotate)
+    }
+}
+
+function startRotate(event) {
+    var cardItem = this.querySelector('.card-item');
+    var halfHeight = cardItem.offsetHeight / 2; //находим половину высоты карточки (делим высоту карточки на 2, для того что бы найти середину, те точку 0)
+    var halfWidht = cardItem.offsetWidth / 2;
+    cardItem.style.transform = 'rotateX(' + -(event.offsetY - halfHeight) / 5 + 'deg) rotateY(' + (event.offsetX - halfWidht) / 5 + 'deg)';
+}
+
+function stopRotate(event) { //возвращаем карточку в исходное положение при отсутствии курсора 
+    var cardItem = this.querySelector('.card-item');
+    cardItem.style.transform = 'rotate(0)';
+}
+//end
 
 
 
@@ -302,6 +343,7 @@ toggleCart();
 addCart();
 actionPage();
 activeFilter();
+toggleLoginform();
 
 
 

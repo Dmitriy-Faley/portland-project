@@ -2,6 +2,7 @@
 
 // another js file (example)
 import './main.js'
+import './validate.js'
 import 'owl.carousel2/dist/assets/owl.carousel.css'
 import 'owl.carousel2'
 import 'slick-carousel'
